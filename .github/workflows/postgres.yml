@@ -35,7 +35,7 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y postgresql-client
     - name: Testar ligacao
       env:
-        PGHOST: ${{ secrets.DB_HOST }}
+        PGHOST: ${{ inputs.name }}
         PGPORT: 5432
         PGDATABASE: postgres
         PGUSER: ${{ secrets.USER }}
