@@ -30,6 +30,8 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "Hello ${{ inputs.name }}"
+    - name: Instalar cliente PostgreSQL
+      run: sudo apt-get update && sudo apt-get install -y postgresql-client
     - name: Testar ligacao
       env:
         PGHOST: ${{ secrets.DB_HOST }}
